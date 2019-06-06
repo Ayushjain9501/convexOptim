@@ -12,8 +12,8 @@ We end up making 23 Trillion computations. And that is a very large number....
 <br><br>
 SGD does away with this redundancy by performing one update at a time. SGD takes a random point from the dataset and uses it to update the parameters.
 
-In the Program
-Iterations = 1000
+In the Program,<br>
+Iterations = 1000<br>
 Learning Rate = 0.001
 
 We tried to fit a Straight line to a random sample.
@@ -22,5 +22,9 @@ We tried to fit a Straight line to a random sample.
 
 ## Theta0 = 4.91479
 ## Theta1 = 93.0177
+
+### References : 
+1)http://ruder.io/optimizing-gradient-descent/index.html#shufflingandcurriculumlearning2<br>
+2)https://www.youtube.com/watch?v=vMh0zPT0tLI
 
 
