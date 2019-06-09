@@ -1,38 +1,30 @@
 # convexOptim
 
-## Assignment 1 Solution
-We were supposed to maximize the likelihood function for the weibull distribution.
+## Stochastic Gradient Descent
+Gradient Descent works just fine, so why another variant?
+On large datasets, Gradient descent computes redundant data...
 
-
-![alt text](https://www.weibull.com/hotwire/issue148/ht148-3.png)
+Consider a Logisitic Regression Model that used 23,000 genes to predict if someone will have a disease.<br>
+Let the Dataset include 10,00,000 samples.<br>
+Then we compute 23 billion terms each iteration.<br>
+And it's common to take atleast 1000 iterations<br>
+We end up making 23 Trillion computations. And that is a very large number....
 <br><br>
-Approach :
-If Gamma approaches the minimum value of the sample and Beta is less than 1,then
+SGD does away with this redundancy by performing one update at a time. SGD takes a random point from the dataset and uses it to update the parameters.
 
-![equation](https://latex.codecogs.com/gif.latex?%28%5Cbeta%20-1%29%5Clog%28min%28t%29-%5Cgamma%29%20%5Crightarrow%20infinity)
+In the Program,<br>
+Iterations = 1000<br>
+Learning Rate = 0.001
 
-To achieve this, Gamma has been set to 0.9999 times the lowest sample value!
+We tried to fit a Straight line to a random sample.
+![alt text](https://github.com/Ayushjain9501/convexOptim/blob/master/Assignments/stochasticGD/output.png)
+![alt text](https://github.com/Ayushjain9501/convexOptim/blob/master/Assignments/stochasticGD/loss.png)
 
-To find the maximum, the partial derivatives with respect to all the three parameters were set to zero and solved simultaneously. On solving,
+## Theta0 = 4.91479
+## Theta1 = 93.0177
 
-Beta sastifies the following equation to be zero.
+### References : 
+1)http://ruder.io/optimizing-gradient-descent/index.html#shufflingandcurriculumlearning2<br>
+2)https://www.youtube.com/watch?v=vMh0zPT0tLI
 
-![alt_text](https://www.weibull.com/hotwire/issue148/ht148-6.png)
-
-Since, we know 0 < Beta < 1,
-A loop was run, which evaluated the value for the above function.
-Beta was chosen such that value was closest to 0.
-
-Eta Satisfies 
-
-![alt_text](https://www.weibull.com/hotwire/issue148/ht148-5.png)
-
-After getting value of Beta, Eta can be found easily.
-
-
-Program written in Python
-Library Used - Numpy
-
-Reference(s) : 
-https://www.weibull.com/hotwire/issue148/hottopics148.htm
 
